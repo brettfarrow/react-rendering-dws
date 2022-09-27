@@ -6,7 +6,7 @@ export default function SlideButton({
   prefix,
 }) {
   return (
-    <div className="mt-20 text-center">
+    <div className="mx-10 mt-20 inline-block text-center">
       <Link href={`/slide-${slideNumber}`}>
         <a className="text-sky-400">
           {prefix} Slide: {slideDisplayNumber}

@@ -3,22 +3,22 @@ import Headline from "../components/Headline";
 import Rule from "../components/Rule";
 import SlideButton from "../components/SlideButton";
 
-export default function Slide00() {
-  const slide = 0;
+export default function Slide03() {
   return (
     <main className="flex h-screen">
       <div className="m-auto">
-        <Headline text={"Slide 0"} />
+        <Headline text={"Slide 3"} />
         <Counter />
         <Rule
-          number={slide}
-          text={"Prop and state changes will cause re-renders"}
+          number={3}
+          text={"Refactoring is often better than using the children prop"}
         />
         <SlideButton
-          slideDisplayNumber={slide + 1}
-          slideNumber={"0" + (slide + 1)}
-          prefix="Next"
+          slideDisplayNumber={2}
+          slideNumber="02"
+          prefix="Previous"
         />
+        <SlideButton slideDisplayNumber={4} slideNumber="04" prefix="Next" />
       </div>
     </main>
   );
