@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export default function Rule({ number, text }) {
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(true)
   const removeHidden = () => {
-    setHidden(false);
-  };
+    setHidden(false)
+  }
   return (
     <h3 className="mt-10 text-xl">
       Rule #{number}:{" "}
@@ -15,5 +15,5 @@ export default function Rule({ number, text }) {
         {text}
       </span>
     </h3>
-  );
+  )
 }

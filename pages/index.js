@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Headline from "../components/Headline";
-import SlideButton from "../components/SlideButton";
+import Link from "next/link"
+import Headline from "../components/Headline"
+import SlideButton from "../components/SlideButton"
 
 export default function Home() {
-  const repoLink = "https://github.com/brettfarrow/react-rendering-dws";
+  const repoLink = "https://github.com/brettfarrow/react-rendering-dws"
   return (
     <main className="flex h-screen">
       <div className="m-auto">
@@ -39,5 +39,5 @@ export default function Home() {
         <SlideButton slideDisplayNumber={0} slideNumber="00" prefix="Next" />
       </div>
     </main>
-  );
+  )
 }

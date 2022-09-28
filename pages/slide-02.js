@@ -1,16 +1,16 @@
-import Counter from "../components/Counter";
-import Headline from "../components/Headline";
-import Rule from "../components/Rule";
-import SlideButton from "../components/SlideButton";
+import Counter from "../components/Counter"
+import Headline from "../components/Headline"
+import Rule from "../components/Rule"
+import NavigationButtons from "../components/NavigationButtons"
 
 export default function Slide02() {
-  const slide = 2;
+  const slide = 2
 
   return (
     <main className="flex h-screen">
       <div className="m-auto">
         <Counter>
-          <Headline text={`Slide ${slide}`} />
+          <Headline text={`Slide ${slide}: Parents and children`} />
         </Counter>
         <Rule
           number={slide}
@@ -18,17 +18,14 @@ export default function Slide02() {
             "When a parent re-renders, all of its children will re-render by default"
           }
         />
-        <SlideButton
-          slideDisplayNumber={slide - 1}
-          slideNumber={"0" + (slide - 1)}
-          prefix="Previous"
+        <Rule
+          number={slide + 0.1}
+          text={
+            "Combined with state changes, this can cause entire pages to re-render"
+          }
         />
-        <SlideButton
-          slideDisplayNumber={slide + 1}
-          slideNumber={"0" + (slide + 1)}
-          prefix="Next"
-        />
+        <NavigationButtons slide={slide} />
       </div>
     </main>
-  );
+  )
 }

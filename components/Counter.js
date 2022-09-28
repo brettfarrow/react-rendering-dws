@@ -1,17 +1,17 @@
-import { useMemo, useState } from "react";
-import CounterButton from "./CounterButton";
+import { useState } from "react"
+import CounterButton from "./CounterButton"
 
 export default function Counter({ children }) {
-  const [count, setCount] = useState(0);
-  const buttonClasses = "w-28 h-10 rounded bg-black text-white mx-2 my-4";
+  const [count, setCount] = useState(0)
+  const buttonClasses = "w-28 h-10 rounded bg-black text-white mx-2 my-4"
 
   const incrementCount = () => {
-    setCount(count + 1);
-  };
+    setCount(count + 1)
+  }
 
   const decrementCount = () => {
-    setCount(count - 1);
-  };
+    setCount(count - 1)
+  }
 
   return (
     <>
@@ -28,5 +28,5 @@ export default function Counter({ children }) {
         text="Decrement"
       />
     </>
-  );
+  )
 }

@@ -1,6 +1,6 @@
 import React from "react"
 
-function ExpandedList({ list }) {
+function ExpandedLinkList({ list }) {
   return (
     <ul className="list-disc">
       {list.map((item) => (
@@ -12,4 +12,4 @@ function ExpandedList({ list }) {
   )
 }
 
-export default React.memo(ExpandedList)
+export default React.memo(ExpandedLinkList)

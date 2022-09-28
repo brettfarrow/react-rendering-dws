@@ -1,27 +1,28 @@
-import { useMemo, useState } from "react";
-import ExpandedList from "../components/ExpandedList";
-import CounterWithCallbackHook from "../components/CounterWithCallbackHook";
-import MemoizedHeadline from "../components/MemoizedHeadline";
-import Rule from "../components/Rule";
-import SlideButton from "../components/SlideButton";
-import CustomHeadlineSimplified from "../components/CustomHeadlineSimplified";
+import { useMemo, useState } from "react"
+import ExpandedList from "../components/ExpandedList"
+import CounterWithCallbackHook from "../components/CounterWithCallbackHook"
+import MemoizedHeadline from "../components/MemoizedHeadline"
+import Rule from "../components/Rule"
+import NavigationButtons from "../components/NavigationButtons"
+import CustomHeadlineSimplified from "../components/CustomHeadlineSimplified"
+import ObjectStateTest from "../components/ObjectStateTest"
 
 export default function Slide06() {
-  const slide = 6;
+  const slide = 6
   const types = useMemo(
     () => ["Objects", "Arrays", "Functions", "Elements", "Components"],
     []
-  );
-  const headlineClasses = "text-xl font-semibold mb-2";
-  const headlineText = "These data types will cause extra renders";
+  )
+  const headlineClasses = "text-xl font-semibold mb-2"
+  const headlineText = "These data types will cause extra renders"
 
-  const [exampleValue, setExampleValue] = useState(false);
+  const [exampleValue, setExampleValue] = useState(false)
 
   return (
     <main className="flex h-screen">
       <div className="m-auto">
         <MemoizedHeadline
-          text={`Slide ${slide}: Fixing the Problematic Data Types`}
+          text={`Slide ${slide}: Fixing the problems with hooks`}
         />
         <CounterWithCallbackHook />
         <CustomHeadlineSimplified
@@ -37,31 +38,22 @@ export default function Slide06() {
         </button>
         <Rule
           number={slide}
-          text={
-            "Primitive types are compared by value; all others are compared by reference"
-          }
+          text={"useMemo is the ideal hook for memoizing objects or arrays"}
         />
         <Rule
           number={slide + 0.1}
           text={
-            "Components which accept more complex types often need to be refactored"
+            "useCallback is the same thing but an easier syntax designed for memoizing functions"
           }
         />
         <Rule
           number={slide + 0.2}
-          text={"Or their parents need to memoize the props before passing"}
+          text={
+            "useRef does the same thing technically but may not be the best semantic choice"
+          }
         />
-        <SlideButton
-          slideDisplayNumber={slide - 1}
-          slideNumber={"0" + (slide - 1)}
-          prefix="Previous"
-        />
-        <SlideButton
-          slideDisplayNumber={slide + 1}
-          slideNumber={"0" + (slide + 1)}
-          prefix="Next"
-        />
+        <NavigationButtons slide={slide} />
       </div>
     </main>
-  );
+  )
 }

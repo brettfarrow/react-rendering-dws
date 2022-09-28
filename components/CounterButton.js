@@ -3,5 +3,5 @@ export default function CounterButton({ className, text, onClick }) {
     <button className={className} onClick={onClick}>
       {text}
     </button>
-  );
+  )
 }

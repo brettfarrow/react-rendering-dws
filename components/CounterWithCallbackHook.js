@@ -1,17 +1,17 @@
-import { useCallback, useState } from "react";
-import MemoizedCounterButton from "./MemoizedCounterButton";
+import React, { useCallback, useState } from "react"
+import MemoizedCounterButton from "./MemoizedCounterButton"
 
-export default function CounterWithCallbackHook() {
-  const [count, setCount] = useState(0);
-  const buttonClasses = "w-28 h-10 rounded bg-black text-white m-2";
+function CounterWithCallbackHook() {
+  const [count, setCount] = useState(0)
+  const buttonClasses = "w-28 h-10 rounded bg-black text-white m-2"
 
   const incrementCount = useCallback(() => {
-    setCount((prevCount) => ++prevCount);
-  }, []);
+    setCount((prevCount) => ++prevCount)
+  }, [])
 
   const decrementCount = useCallback(() => {
-    setCount((prevCount) => --prevCount);
-  }, []);
+    setCount((prevCount) => --prevCount)
+  }, [])
 
   return (
     <>
@@ -27,5 +27,7 @@ export default function CounterWithCallbackHook() {
         text="Decrement"
       />
     </>
-  );
+  )
 }
+
+export default React.memo(CounterWithCallbackHook)

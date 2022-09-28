@@ -1,25 +1,25 @@
-import { useState } from "react";
-import Counter from "../components/Counter";
-import CustomHeadline from "../components/CustomHeadline";
-import ExpandedList from "../components/ExpandedList";
-import MemoizedHeadline from "../components/MemoizedHeadline";
-import Rule from "../components/Rule";
-import SlideButton from "../components/SlideButton";
+import { useState } from "react"
+import Counter from "../components/Counter"
+import CustomHeadline from "../components/CustomHeadline"
+import ExpandedList from "../components/ExpandedList"
+import MemoizedHeadline from "../components/MemoizedHeadline"
+import Rule from "../components/Rule"
+import NavigationButtons from "../components/NavigationButtons"
 
 export default function Slide05() {
-  const slide = 5;
-  const types = ["Objects", "Arrays", "Functions", "Elements", "Components"];
+  const slide = 5
+  const types = ["Objects", "Arrays", "Functions", "Elements", "Components"]
   const headlineConfig = {
     className: "text-xl font-semibold mb-2",
     text: "These data types will cause extra renders",
-  };
+  }
 
-  const [exampleValue, setExampleValue] = useState(false);
+  const [exampleValue, setExampleValue] = useState(false)
 
   return (
     <main className="flex h-screen">
       <div className="m-auto">
-        <MemoizedHeadline text={`Slide ${slide}: Problematic Data Types`} />
+        <MemoizedHeadline text={`Slide ${slide}: Problematic data types`} />
         <Counter />
         <CustomHeadline configObj={headlineConfig} />
         <ExpandedList list={types} />
@@ -45,17 +45,8 @@ export default function Slide05() {
           number={slide + 0.2}
           text={"Or their parents need to memoize the props before passing"}
         />
-        <SlideButton
-          slideDisplayNumber={slide - 1}
-          slideNumber={"0" + (slide - 1)}
-          prefix="Previous"
-        />
-        <SlideButton
-          slideDisplayNumber={slide + 1}
-          slideNumber={"0" + (slide + 1)}
-          prefix="Next"
-        />
+        <NavigationButtons slide={slide} />
       </div>
     </main>
-  );
+  )
 }
