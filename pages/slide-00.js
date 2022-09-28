@@ -14,6 +14,16 @@ export default function Slide00() {
           number={slide}
           text={"Prop and state changes will cause re-renders"}
         />
+        <Rule
+          number={slide + 0.1}
+          text={
+            "Not all re-renders result in DOM elements being created/destroyed"
+          }
+        />
+        <Rule
+          number={slide + 0.1}
+          text={"This is why the key prop is important!"}
+        />
         <NavigationButtons slide={slide} />
       </div>
     </main>
