@@ -1,11 +1,9 @@
-import { useMemo, useState } from "react"
 import ExpandedList from "../components/ExpandedList"
+import ExpandedLinkList from "../components/ExpandedLinkList"
 import ItDepends from "../components/ItDepends"
 import MemoizedHeadline from "../components/MemoizedHeadline"
-import Rule from "../components/Rule"
 import NavigationButtons from "../components/NavigationButtons"
 import CustomHeadlineSimplified from "../components/CustomHeadlineSimplified"
-import ObjectStateTest from "../components/ObjectStateTest"
 
 export default function Slide07() {
   const slide = 7
@@ -13,6 +11,24 @@ export default function Slide07() {
     "Not all renders need to be eliminated",
     "You're usually better off optimizing the slowest render instead of minimizing renders",
     "Know your target / performance budget",
+  ]
+  const recommendedArticles = [
+    {
+      title: "Why React Re-Renders",
+      href: "https://www.joshwcomeau.com/react/why-react-re-renders/",
+    },
+    {
+      title: "A Visual Guide to React Rendering by Alex Sidorenko",
+      href: "https://alexsidorenko.com/blog/react-render-always-rerenders/",
+    },
+    {
+      title: "Faster React Apps with Memoization",
+      href: "https://blog.px.dev/ui-performance/",
+    },
+    {
+      title: "Use React.memo() wisely by Dmitri Pavlutin",
+      href: "https://dmitripavlutin.com/use-react-memo-wisely/",
+    },
   ]
 
   return (
@@ -31,6 +47,7 @@ export default function Slide07() {
           className={"mt-4 mb-2 text-xl font-semibold"}
           text={"Recommended reading:"}
         />
+        <ExpandedLinkList list={recommendedArticles} />
         <NavigationButtons slide={slide} />
       </div>
     </main>
