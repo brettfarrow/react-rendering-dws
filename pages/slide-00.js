@@ -8,7 +8,7 @@ export default function Slide00() {
   return (
     <main className="flex h-screen">
       <div className="m-auto">
-        <Headline text={"Slide 0"} />
+        <Headline text={`Slide ${slide}: The Basics`} />
         <Counter />
         <Rule
           number={slide}

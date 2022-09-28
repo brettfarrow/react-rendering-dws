@@ -6,9 +6,12 @@ export default function Rule({ number, text }) {
     setHidden(false);
   };
   return (
-    <h3 className="text-xl mt-10">
+    <h3 className="mt-10 text-xl">
       Rule #{number}:{" "}
-      <span className={hidden ? "blur-md" : ""} onClick={removeHidden}>
+      <span
+        className={`${hidden ? "ml-3 blur-md" : ""}`}
+        onClick={removeHidden}
+      >
         {text}
       </span>
     </h3>

@@ -1,27 +1,33 @@
-import { useState } from "react";
-import Counter from "../components/Counter";
-import CustomHeadline from "../components/CustomHeadline";
+import { useMemo, useState } from "react";
 import ExpandedList from "../components/ExpandedList";
+import CounterWithCallbackHook from "../components/CounterWithCallbackHook";
 import MemoizedHeadline from "../components/MemoizedHeadline";
 import Rule from "../components/Rule";
 import SlideButton from "../components/SlideButton";
+import CustomHeadlineSimplified from "../components/CustomHeadlineSimplified";
 
-export default function Slide05() {
-  const slide = 5;
-  const types = ["Objects", "Arrays", "Functions", "Elements", "Components"];
-  const headlineConfig = {
-    className: "text-xl font-semibold mb-2",
-    text: "These data types will cause extra renders",
-  };
+export default function Slide06() {
+  const slide = 6;
+  const types = useMemo(
+    () => ["Objects", "Arrays", "Functions", "Elements", "Components"],
+    []
+  );
+  const headlineClasses = "text-xl font-semibold mb-2";
+  const headlineText = "These data types will cause extra renders";
 
   const [exampleValue, setExampleValue] = useState(false);
 
   return (
     <main className="flex h-screen">
       <div className="m-auto">
-        <MemoizedHeadline text={`Slide ${slide}: Problematic Data Types`} />
-        <Counter />
-        <CustomHeadline configObj={headlineConfig} />
+        <MemoizedHeadline
+          text={`Slide ${slide}: Fixing the Problematic Data Types`}
+        />
+        <CounterWithCallbackHook />
+        <CustomHeadlineSimplified
+          className={headlineClasses}
+          text={headlineText}
+        />
         <ExpandedList list={types} />
         <button
           className="mx-2 my-4 h-10 w-28 rounded bg-red-700 text-white"

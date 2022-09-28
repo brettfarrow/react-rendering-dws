@@ -3,7 +3,7 @@ import CounterButton from "./CounterButton";
 
 export default function Counter({ children }) {
   const [count, setCount] = useState(0);
-  const buttonClasses = "w-28 h-10 rounded bg-black text-white m-2";
+  const buttonClasses = "w-28 h-10 rounded bg-black text-white mx-2 my-4";
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -16,7 +16,7 @@ export default function Counter({ children }) {
   return (
     <>
       {children}
-      <h2 className="text-xl">Current count: {count}</h2>
+      <h2 className="my-3 text-xl">Current count: {count}</h2>
       <CounterButton
         className={buttonClasses}
         onClick={incrementCount}
