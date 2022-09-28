@@ -21,7 +21,7 @@ export default function Slide00() {
           }
         />
         <Rule
-          number={slide + 0.1}
+          number={slide + 0.2}
           text={"This is why the key prop is important!"}
         />
         <NavigationButtons slide={slide} />
