@@ -29,6 +29,10 @@ export default function Slide07() {
       title: "Use React.memo() wisely by Dmitri Pavlutin",
       href: "https://dmitripavlutin.com/use-react-memo-wisely/",
     },
+    {
+      title: "Reconciliation (aka the diffing algorithm) in React",
+      href: "https://reactjs.org/docs/reconciliation.html",
+    }
   ]
 
   return (
